@@ -2,8 +2,8 @@
 WorldInfo {
 }
 Viewpoint {
-  orientation 0.12044519083115972 0.9828814482349447 0.13941669455708414 4.506660302171369
-  position -1.447157555402508 0.9566364505531579 0.1277282444057289
+  orientation 0.339280105659746 0.9172643182447697 0.2086029251436072 5.073572807652111
+  position -1.6025446050453669 1.2757441562992744 1.0565185389903324
 }
 TexturedBackground {
 }
@@ -136,13 +136,49 @@ Group {
             }
             Solid {
               translation 0 0.07 0
+              rotation 1 0 0 -1.5707996938995747
               children [
                 Shape {
-                  geometry Box {
-                    size 0.04 0.04 0.09999999999999999
+                  geometry Cylinder {
+                    height 0.1
+                    radius 0.03
                   }
                 }
-                Hinge2Joint {
+                HingeJoint {
+                  jointParameters HingeJointParameters {
+                    position -0.18493183890124007
+                    axis 0 0 1
+                    anchor 0 0.03 0.060000000000000005
+                    minStop -0.785
+                    maxStop 0.785
+                  }
+                  endPoint Solid {
+                    translation 0.027475194779251436 0.17746224490303344 -1.3877787807814457e-17
+                    rotation 0.09194311170786129 0.9915104564988912 -0.09194280212630093 1.5793253754273615
+                    children [
+                      Shape {
+                        appearance USE Cilindro_superior
+                        geometry Cylinder {
+                          height 0.30000000000000004
+                          radius 0.01
+                        }
+                      }
+                      Solid {
+                        translation 0 0.14 0
+                        children [
+                          Shape {
+                            geometry Box {
+                              size 0.03 0.060000000000000005 0.019999999999999997
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                    physics Physics {
+                    }
+                    linearVelocity 0.044590508900575115 2.7221553580144698e-08 0.008084620165832355
+                    angularVelocity -1.1828911338150186e-14 -0.3020499297667564 1.0170325018851272e-06
+                  }
                 }
               ]
               name "solid(1)"
