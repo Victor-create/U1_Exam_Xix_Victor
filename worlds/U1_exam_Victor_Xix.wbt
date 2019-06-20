@@ -2,8 +2,8 @@
 WorldInfo {
 }
 Viewpoint {
-  orientation 0.339280105659746 0.9172643182447697 0.2086029251436072 5.073572807652111
-  position -1.6025446050453669 1.2757441562992744 1.0565185389903324
+  orientation 0.4874898801503249 0.8547676355586264 0.1781176744529786 5.442355210003927
+  position -1.4524304426410564 1.1594044060310034 2.196296986025319
 }
 TexturedBackground {
 }
@@ -121,7 +121,7 @@ Group {
     Group {
       children [
         Transform {
-          translation -0.15 0.65 0.15
+          translation -0.15000000000000002 0.66 0.28
           children [
             Shape {
               appearance DEF Cilindro_superior PBRAppearance {
@@ -135,7 +135,7 @@ Group {
               }
             }
             Solid {
-              translation 0 0.07 0
+              translation 0.01299 0.07000000000000461 0.015666799999999998
               rotation 1 0 0 -1.5707996938995747
               children [
                 Shape {
@@ -173,11 +173,46 @@ Group {
                           }
                         ]
                       }
+                      Transform {
+                        translation 0 -0.25 0
+                        rotation 0 0 1 0
+                        children [
+                          HingeJoint {
+                            jointParameters HingeJointParameters {
+                            }
+                            endPoint Solid {
+                              rotation 1 0 0 1.3089969349999997
+                              children [
+                                Transform {
+                                  children [
+                                    Solid {
+                                      children [
+                                        DEF elize Shape {
+                                          geometry Cylinder {
+                                            height 0.6
+                                            radius 0.019999999999999997
+                                          }
+                                        }
+                                      ]
+                                    }
+                                    Solid {
+                                      rotation 0 0 1 1.5707996938995747
+                                      children [
+                                        USE elize
+                                      ]
+                                      name "solid(1)"
+                                    }
+                                  ]
+                                }
+                              ]
+                              name "solid(1)"
+                            }
+                          }
+                        ]
+                      }
                     ]
                     physics Physics {
                     }
-                    linearVelocity 0.044590508900575115 2.7221553580144698e-08 0.008084620165832355
-                    angularVelocity -1.1828911338150186e-14 -0.3020499297667564 1.0170325018851272e-06
                   }
                 }
               ]
